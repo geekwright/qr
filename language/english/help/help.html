@@ -1,0 +1,129 @@
+<div id="help-template" class="outer">
+    <h1 class="head">Help:
+        <a class="ui-corner-all tooltip" href="<{$xoops_url}>/modules/qr/admin/index.php"
+           title="Back to QR module administration"> QR
+        </a></h1>
+    <!-- -----Help Content ---------- -->
+
+<h4 class="odd">Description</h4>
+<p class="even">
+QR is a module that supplies a variety of blocks displaying a QR code&reg;. These codes are most commonly used to share information via smartphones. 
+The built in phone camera is used with a scanning 'app' to read the code, and take appropriate actions, such as offer to call or store
+contact information, or launch a browser to a URL. All of the code generation occurs on your server, so no data leaves your site when 
+using these blocks.
+
+<h4 class="odd">Install/uninstall</h4>
+<p class="even">
+Normally, no special measures should be necessary, just follow the standard installation process. Extract the "qr" folder into the modules directory, and install the module through Administration Control Panel.</p>
+
+<h4 class="odd">Security and Permissions</h4>
+<p class="even">
+You want to grant group access permissions to the QR module (not just for the blocks,) as it will not render a code without permission. 
+In the module preferences you can also choose to check the referer when a request is made for a code to reduce the possibility of someone 
+'leeching' QR images from your site.
+
+<h4 class="odd">Preferences</h4>
+<p class="even">
+<ul style="padding-left:2em;" >
+<li><b>Limit by Referer</b> - If set to "Yes," a simple check of the HTTP_REFERER will be made before generating any codes. This 
+is intended to help reduce image leaching, which can be more costly since the code images are dynamically generated. But be aware, this
+type of check may cause problems for legitimate users in some situations.</li>
+<li><b>Error Correction Level</b> - Each QR Code includes error correction to recover from damage or distortions in the code. More error 
+correction capability translates into larger code images. The default is level M, which is probably more than adequate for a screen
+displayed image.</li>
+</ul>
+</p>
+
+<h4 class="odd">Blocks</h4>
+<p class="even">QR module provides 4 different blocks.
+<ul style="padding-left:2em;" >
+<li><b>Manual QR Code</b> - Displays a string as a code</li>
+<li><b>MECARD</b> - coded contact data in docomo MECARD format</li>
+<li><b>This Page QR Code</b> - Displays URL for the current page as a QR code&reg;. The URL includes only the specified page parameters in a 'get' type request.</li>
+<li><b>This Page QR Code Block Extra</b> - as above, but uses a separate template (templates/blocks/qr_blockx_html) for special customizations. </li>
+</ul>
+<br />
+Here is an example situation for the use of the <b>This Page QR Code Block Extra</b> block. QR codes are often used for sharing, 
+so you might want one near the +1, Like, etc. buttons. You can edit templates/blocks/qr_blockx_html to add the needed html to
+enable the other options, and voila - a QR'ed share block.
+
+<h4 class="odd">Direct Image Generation</h4>
+<p class="even">
+You can also generate a QR code&reg; png image outside of the supplied blocks using these scripts directly:<br />
+<br />Generate code for any arbitrary data:<br />
+<i>XOOPS_URL/modules/qr/getqrcode.php?qrdata=DATA+TO+ENCODE</i>
+<br />
+<br />
+Generate MECARD code (name, email, url) for a XOOPS user:<br />
+<i>XOOPS_URL/modules/qr/uidmecard.php?uid=nnn</i>
+<br />
+<br />
+Generate MECARD code from structured data like this:<br />
+<i>XOOPS_URL/modules/qr/getmecard.php?N=name&TEL=+15555551212&email=name@example.com</i>
+<br />The following named request variables are interpred as MECARD
+fields. These request variable names are accepted as either all
+upper or all lower case (not mixed):
+
+<ul style="padding-left:2em;" >
+  <li>N <i>(name)</i></li>
+  <li>SOUND <i>(kana)</i></li>
+  <li>TEL <i>(phone number)</i></li>
+  <li>TEL-AV <i>(video capable phone number)</i></li>
+  <li>EMAIL <i>(email address)</i></li>
+  <li>NOTE <i>(notes)</i></li>
+  <li>BDAY <i>(birthday)</i></li>
+  <li>ADR <i>(address)</i></li>
+  <li>URL <i>(web site)</i></li>
+  <li>NICKNAME <i>(nickname)</i></li>
+</ul>
+<br />
+The N (name) is generally required by code scanners, and thus is 
+required to generate a code. All other variables are optional, and 
+will be used only if specified. Documentation for the MECARD format
+can be found here:</br />
+http://www.nttdocomo.co.jp/english/service/developer/make/content/barcode/function/application/addressbook/index.html
+
+<h4 class="odd">Choosing Variables to Include in a QR URL</h4>
+<p class="even">
+Most dynamic content modules have id variables to control what the visitor sees. For example, you might have a news module 
+that uses a variable 'storyid' to control which article is shown. The URL looks something like this:<br />
+http://example.com/modules/news/view.php<b>?storyid=26</b><br />
+The stuff that follows the '?' is our query string that contains the variables we are talking about. Now imagine further that 
+the article, identified by storyid 26 is several pages long, so if you are looking at page two, the URL might look something like:<br />
+http://example.com/modules/news/view.php<b>?storyid=26&amp;start=2</b><br />
+To both keep the url size small and to reduce the confusion which might occur by a shared link landing someone in the middle of a story 
+we can make sure that the list contains 'storyid' but not 'start'. Optionally, you can also require that at least one variable from
+your list is in the url before a code is generated. One use for this is to make sure a code points to an article and not a index list 
+or some other non-content page.
+
+<h4 class="odd">Troubleshooting</h4>
+<p class="even">
+During installation, qr moves a directory "trust" to the trust path "/modules/qr" directory. If this operation does not complete 
+cleanly, you may have to manually move these files. Check to see if the "trust" directory ('modules/qr/trust') still exists, and move it 
+if needed. At the end of the installation, there should not be a trust directory in modules/qr.
+<pre style="font-family: courier,mono;">
+The files and directories below                      need to be moved to here
+
+xoops_root_path/modules/qr/trust   -------------->>> xoops_trust_path/modules/qr
+                           | CHANGES.txt                              | CHANGES.txt
+                           + data                                     + data
+                           + image                                    + image
+                           + perl                                     + perl
+                           + php                                      + php
+                           | README-e.txt                             | README-e.txt
+                           | README.sjis                              | README.sjis
+                           | README.txt                               | README.txt
+
+</pre>
+<p class="even">Depending on your system and how you move the folder, you may need to copy or move and then rename 'trust' to 'qr'.
+
+<h4 class="odd">Credits</h4>
+<p class="even">
+This module is only possible thanks to Y.Swetake's excellent QRcode Perl CGI & PHP scripts, ver.0.50i. This portion of this package is 
+covered under a separate free software license.
+<br /><br />
+For more information on the QRcode script see:
+<a href="http://www.swetake.com/qr/index-e.html" target="_blank">http://www.swetake.com/qr/index-e.html</a>
+<br /><br /><b>QR Code</b> is registered trademark of Denso Wave Incorporated.</b>
+
+</div>
