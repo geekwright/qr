@@ -21,6 +21,7 @@ include 'header.php';
 	$rendertest=_AM_QRMODULE_CONFIG_RENDER_CODE;
 	if(!empty($_REQUEST['test'])) $rendertest=$_REQUEST['test'];
 	$rendertestenc=urlencode($rendertest);
+	$rendertest=htmlspecialchars($rendertest,ENT_QUOTES);
 	$rendercode =sprintf('<form action="" method="get">%s <input type="text" name="test" value="%s" />',_AM_QRMODULE_CONFIG_RENDER_PHRASE,$rendertest);
 	$rendercode.=sprintf('<img src="../getqrcode.php?qrdata=%s" alt="%s"  title="%s" /></form>',$rendertestenc,$rendertest,$rendertest);
 

@@ -45,7 +45,7 @@ displayed image.</li>
 <br />
 Here is an example situation for the use of the <b>This Page QR Code Block Extra</b> block. QR codes are often used for sharing, 
 so you might want one near the +1, Like, etc. buttons. You can edit templates/blocks/qr_blockx_html to add the needed html to
-enable the other options, and voila - a QR'ed share block.
+enable the other options, and voil&agrave; - a QR'ed share block.
 
 <h4 class="odd">Direct Image Generation</h4>
 <p class="even">
@@ -91,9 +91,9 @@ http://example.com/modules/news/view.php<b>?storyid=26</b><br />
 The stuff that follows the '?' is our query string that contains the variables we are talking about. Now imagine further that 
 the article, identified by storyid 26 is several pages long, so if you are looking at page two, the URL might look something like:<br />
 http://example.com/modules/news/view.php<b>?storyid=26&amp;start=2</b><br />
-To both keep the url size small and to reduce the confusion which might occur by a shared link landing someone in the middle of a story 
+To both keep the URL size small and to reduce the confusion which might occur by a shared link landing someone in the middle of a story 
 we can make sure that the list contains 'storyid' but not 'start'. Optionally, you can also require that at least one variable from
-your list is in the url before a code is generated. One use for this is to make sure a code points to an article and not a index list 
+your list is in the URL before a code is generated. One use for this is to make sure a code points to an article and not a index list 
 or some other non-content page.
 
 <h4 class="odd">Troubleshooting</h4>
@@ -109,15 +109,15 @@ If this doesn't help, try to manually move the files as shown below.
 <pre style="font-family: courier,mono;">
 The files and directories below                      need to be moved to here
 
-xoops_root_path/modules/qr/trust   -------------->>> xoops_trust_path/modules/qr
-                           | CHANGES.txt                              | CHANGES.txt
-                           + data                                     + data
-                           + image                                    + image
-                           + perl                                     + perl
-                           + php                                      + php
-                           | README-e.txt                             | README-e.txt
-                           | README.sjis                              | README.sjis
-                           | README.txt                               | README.txt
+xoops_root_path/modules/qr/trust   ------->>> xoops_trust_path/modules/qr
+                           | CHANGES.txt                               | CHANGES.txt
+                           + data                                      + data
+                           + image                                     + image
+                           + perl                                      + perl
+                           + php                                       + php
+                           | README-e.txt                              | README-e.txt
+                           | README.sjis                               | README.sjis
+                           | README.txt                                | README.txt
 
 </pre>
 <p class="even">Depending on your system and how you move the folder, you may need to copy or move and then rename 'trust' to 'qr'.
