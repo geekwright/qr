@@ -100,7 +100,12 @@ or some other non-content page.
 <p class="even">
 During installation, qr moves a directory "trust" to the trust path "/modules/qr" directory. If this operation does not complete 
 cleanly, you may have to manually move these files. Check to see if the "trust" directory ('modules/qr/trust') still exists, and move it 
-if needed. At the end of the installation, there should not be a trust directory in modules/qr.
+if needed. At the end of the installation, there should not be a trust directory in modules/qr. 
+
+<p class="even">This failure will usually show in the install log as <em>Failed to execute xoops_module_install_qr</em>. 
+The first thing to try is to make sure that the directory, XOOPS_TRUST_PATH/modules is writable, and then try to update the module. 
+If this doesn't help, try to manually move the files as shown below.
+
 <pre style="font-family: courier,mono;">
 The files and directories below                      need to be moved to here
 
