@@ -9,7 +9,6 @@
 * @package    qr
 * @version    $Id$
 */
-
 if (!defined("XOOPS_ROOT_PATH"))  die("Root path not defined");
 # recursively remove a directory
 function xoops_module_update_qr_rrmdir($dir) {
@@ -35,12 +34,16 @@ eval ('function '.$qrUpdateFunctionName.'(&$module, $old_version) {
 	$dir = basename( dirname ( dirname( __FILE__ ) ) ) ;
 	$codedir=XOOPS_ROOT_PATH . "/modules/".$dir."/trust";
 	$ourtrust=XOOPS_TRUST_PATH."/modules/".$dir;
-	if(is_dir($codedir) && is_dir($ourtrust)) xoops_module_update_qr_rrmdir($ourtrust);
-	if(is_dir($codedir) && !is_dir($ourtrust)) {
-		if(!is_dir(XOOPS_TRUST_PATH."/modules")) mkdir(XOOPS_TRUST_PATH."/modules");
-		rename($codedir, $ourtrust );
+	if(is_writable( XOOPS_TRUST_PATH."/modules/" ) ) {
+		if(is_dir($codedir) && is_dir($ourtrust)) xoops_module_update_qr_rrmdir($ourtrust);
+		if(is_dir($codedir) && !is_dir($ourtrust)) {
+			if(!is_dir(XOOPS_TRUST_PATH."/modules")) mkdir(XOOPS_TRUST_PATH."/modules");
+			rename($codedir, $ourtrust );
+		}
+		return true;
 	}
-	return true;
+	$module->setErrors(XOOPS_TRUST_PATH . "/modules is not writable. See help.");
+	return false;
 }');
 
 ?>

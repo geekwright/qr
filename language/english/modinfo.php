@@ -10,6 +10,7 @@
  * @version	$Id$
  */
 if (!defined('XOOPS_ROOT_PATH')) die('Root path not defined');
+if (!defined('_MI_QR_NAME')) {
 // Module Info
 
 // The name and description of module
@@ -49,4 +50,5 @@ define('_MI_QRMODULE_ABOUT_DESC', 'About QR');
 
 define('_MI_QRMODULE_LICENSE','License');
 define('_MI_QRMODULE_LICENSE_DESC','Details of the Multiple Licenses used in this module.');
+}
 ?>
