@@ -1,4 +1,4 @@
-Qr Module Version 1.2 for XOOPS and ImpressCMS
+Qr Module Version 1.3 for XOOPS and ImpressCMS
 
 Overview
 ========
@@ -25,7 +25,7 @@ which use the standard mainfile inclusion. This adds a layer of
 additional protections (such as protector) but requires access
 permissions to work as intended.
 
-Four blocks are available.
+Five blocks are available.
 
 Manual QR Code          - Display any string as a QR code
 MECARD                  - Docomo MECARD format QR code
@@ -36,6 +36,10 @@ This Page QR Code Extra - Same as 'This Page QR Code' but uses
                           the blocks/qr_blockx.html template, 
                           for use in installations needing 
                           multiple customizations.
+QR Bookmark This Page   - Display a MEBKM format bookmark QR code
+                          that includes the page title and url. 
+                          Also includes an option to show the code
+                          as a popup.
 
 Additionally, a qr code image in png format can be generated 
 outside of the supplied blocks by supplying these scripts as

@@ -35,12 +35,14 @@ displayed image.</li>
 </p>
 
 <h4 class="odd">Blocks</h4>
-<p class="even">QR module provides 4 different blocks.
+<p class="even">QR module provides 5 different blocks.
 <ul style="padding-left:2em;" >
 <li><b>Manual QR Code</b> - Displays a string as a code</li>
 <li><b>MECARD</b> - coded contact data in docomo MECARD format</li>
 <li><b>This Page QR Code</b> - Displays URL for the current page as a QR code&reg;. The URL includes only the specified page parameters in a 'get' type request.</li>
 <li><b>This Page QR Code Block Extra</b> - as above, but uses a separate template (templates/blocks/qr_blockx_html) for special customizations. </li>
+<li><b>QR Bookmark This Page</b> - Displays a MEBKM format bookmark QR code that includes the page title and url. This also includes an option
+to show the code as a popup, which can help with layout issues, especially with large codes resulting from long titles. </li>
 </ul>
 <br />
 Here is an example situation for the use of the <b>This Page QR Code Block Extra</b> block. QR codes are often used for sharing, 

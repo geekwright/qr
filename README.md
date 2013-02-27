@@ -1,4 +1,4 @@
-Qr Module Version 1.2 for XOOPS and ImpressCMS
+Qr Module Version 1.3 for XOOPS and ImpressCMS
 ==============================================
 
 This module adds QR Code(R) generating capabilities to a XOOPS or ImpressCMS site. Codes can be added to your site through blocks or by direct script calls.

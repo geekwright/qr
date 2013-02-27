@@ -50,5 +50,10 @@ define('_MI_QRMODULE_ABOUT_DESC', 'About QR');
 
 define('_MI_QRMODULE_LICENSE','License');
 define('_MI_QRMODULE_LICENSE_DESC','Details of the Multiple Licenses used in this module.');
+
+// new in v1.3
+define('_MI_QR_BOOKMARK', 'QR Bookmark This Page');
+define('_MI_QR_BOOKMARK_DESC', 'Display Bookmark QR Code for Current Page.');
+define('_MB_QR_MEBKM_LAUNCH', 'Click for QR Code&reg;');
 }
 ?>

@@ -1,0 +1,50 @@
+<!-- MEBKM:TITLE:(title);URL:(url);; -->
+<{if $block.usepopup}>
+<style>
+div#qrpopup
+{
+	display:none;
+	left:40px;
+	top:40px;
+	position:fixed;
+	background-color: #ffffff;
+	border-style: solid;
+	border-width: thin;
+	border-color: #888888;
+	border-radius: 10px;
+	z-index: 9999;
+	box-shadow: 10px 10px 5px #888888;
+}
+img#qrmebkm
+{
+	margin: 4em;
+	margin-top: 2em;
+}
+</style>
+<div id="qrpopup" onclick="hideQRPopUp();" title="<{$block.popupclose}>">
+<img src="<{$block.imagedir}>/close.png" alt="<{$block.popupclose}>" style="float:right;padding:6px;"><br style="clear:right;" />
+<img id="qrmebkm" src="<{$block.imagedir}>/blank.png" alt="<{$block.alt}>" title="<{$block.alt}>">
+</div>
+<a onclick="showQRPopUp();"><img src="<{$block.imagedir}>/icon_big.png" style="vertical-align:middle;" alt="<{$block.popupprompt}>" title="<{$block.popupprompt}>"> <{$block.popupprompt}></a>
+<script>
+function showQRPopUp() {
+	var title=encodeURIComponent(document.title);
+	var imgsrc="<{$block.qrscript}>MEBKM:TITLE:"+title+";URL:<{$block.url}>;;";
+	var e = document.getElementById('qrmebkm');
+	e.src=imgsrc;
+	document.getElementById('qrpopup').style.display="block";
+}
+function hideQRPopUp() {
+	document.getElementById('qrpopup').style.display="none";
+}
+</script>
+<{else}>
+<img id="qrmebkm" src="<{$block.imagedir}>/blank.png" alt="<{$block.alt}>" title="<{$block.alt}>">
+<script>
+	var title=encodeURIComponent(document.title);
+	var imgsrc="<{$block.qrscript}>MEBKM:TITLE:"+title+";URL:<{$block.url}>;;";
+	var e = document.getElementById('qrmebkm');
+	e.src=imgsrc;
+</script>
+<{/if}>
+
