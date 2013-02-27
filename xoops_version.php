@@ -117,7 +117,7 @@ $modversion['blocks'][] = array(
   'description' => _MI_QR_BOOKMARK_DESC,
   'show_func' => 'b_qr_bookmark_show',
   'edit_func' => 'b_qr_bookmark_edit',
-  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|QR Code bookmark for this page|0|0|'._MB_QR_MEBKM_LAUNCH;,
+  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|QR Code bookmark for this page|0|0|'._MB_QR_MEBKM_LAUNCH,
   'template' => 'qr_block_mebkm.html');
 
 // Templates
