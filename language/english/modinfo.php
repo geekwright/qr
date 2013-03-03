@@ -55,5 +55,9 @@ define('_MI_QRMODULE_LICENSE_DESC','Details of the Multiple Licenses used in thi
 define('_MI_QR_BOOKMARK', 'QR Bookmark This Page');
 define('_MI_QR_BOOKMARK_DESC', 'Display Bookmark QR Code for Current Page.');
 define('_MB_QR_MEBKM_LAUNCH', 'Click for QR Code&reg;');
+
+define('_MI_QRMODULE_TROUBLESHOOT', 'Troubleshoot');
+define('_MI_QRMODULE_TROUBLESHOOT_DESC', 'Troubleshooting Install Problems');
+
 }
 ?>
