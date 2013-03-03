@@ -50,9 +50,9 @@ $modversion['hasComments'] = 0;
 // notification
 $modversion['hasNotification'] = 0;
 
-$modversion['onInstall'] = 'include/install.php';
-$modversion['onUpdate'] = 'include/update.php';
-$modversion['onUninstall'] = 'include/uninstall.php';
+//$modversion['onInstall'] = 'include/install.php';
+//$modversion['onUpdate'] = 'include/update.php';
+//$modversion['onUninstall'] = 'include/uninstall.php';
 // Config
 
 $modversion['config'][1]=array(
@@ -61,7 +61,7 @@ $modversion['config'][1]=array(
   'description' => '_MI_QR_LIMIT_REFERER_DSC',
   'formtype' => 'yesno',
   'valuetype' => 'int',
-  'default' => '1');
+  'default' => '0');
 
 $modversion['config'][]=array(
   'name' => 'ec_level',
@@ -117,7 +117,7 @@ $modversion['blocks'][] = array(
   'description' => _MI_QR_BOOKMARK_DESC,
   'show_func' => 'b_qr_bookmark_show',
   'edit_func' => 'b_qr_bookmark_edit',
-  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|QR Code bookmark for this page|0|0|'._MB_QR_MEBKM_LAUNCH,
+  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|QR Code bookmark for this page|0|1|'._MB_QR_MEBKM_LAUNCH,
   'template' => 'qr_block_mebkm.html');
 
 // Templates

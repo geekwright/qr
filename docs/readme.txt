@@ -75,16 +75,11 @@ will be used only if specified.
 
 Notes
 =====
-During installation, the actual qr generating code is copied
-to the trustpath. This library is kept on the trustpath to prevent 
-direct access to the scripts it contains. This controls access 
-according to CMS permissions, minimizes security considerations it
-might otherwise expose, and isolates the code by license.
-
-The code remaining in the htdocs folder is covered under GPL V2, 
-while in the trustpath, Y.Swetake's excellent QRcode Perl CGI & 
-PHP script ver.0.50i is covered under a separate free software 
-license documented in both the docs and trustpath folders.
+This module is released under the GNU General Public License, 
+Version 2, with the exception of the 'swetake' folder. This
+folder contains Y.Swetake's excellent QRcode PHP script ver.0.50i,
+and is covered under a separate free software license documented 
+in both the docs and swetake folders.
 
 More information on the QRcode library scripts see:
 http://www.swetake.com/qr/index-e.html

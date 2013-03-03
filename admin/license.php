@@ -16,7 +16,7 @@ if($xoop25plus) echo $moduleAdmin->addNavigation('license.php');
 else adminmenu(3);
 
 $qr='QRcode Perl CGI & PHP script ver.0.50i';
-$line = '<p><b>This license covers the scripts in the "modules/qr/trust" directory of this module distribution:</b><br /><br />';
+$line = '<p><b>This license covers the scripts in the "modules/qr/swetake" directory of this module distribution:</b><br /><br />';
 $line .= '<pre>'.utf8_encode(implode("\n", file('../docs/swetake-license.txt'))) . "\n</pre>";
 if($xoop25plus) {
 	$moduleAdmin->addInfoBox($qr);
@@ -29,7 +29,7 @@ if($xoop25plus) {
 }
 
 $mod='QR - a module for Xoops';
-$line = '<p><b>This license covers all of the QR module distribution except the scripts in the "modules/qr/trust" directory:</b><br /><br />';
+$line = '<p><b>This license covers all of the QR module distribution except the scripts in the "modules/qr/swetake" directory:</b><br /><br />';
 $line .= '<pre>'.utf8_encode(implode("\n", file('../docs/license.txt'))) . "\n</pre>";
 if($xoop25plus) {
 	$moduleAdmin->addInfoBox($mod);

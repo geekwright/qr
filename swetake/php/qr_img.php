@@ -1,4 +1,5 @@
 <?php
+if (!defined("XOOPS_ROOT_PATH"))  die("Root path not defined");
 /*
 #
 # QRcode image PHP scripts  version 0.50i (C)2000-2009,Y.Swetake

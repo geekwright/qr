@@ -48,7 +48,7 @@ if ($check) {
 		$_GET['d']=$card;
 		$_GET['e']=$xoopsModuleConfig['ec_level'];
 		unset($_GET['s'],$_GET['v'],$_GET['t'],$_GET['n'],$_GET['m'],$_GET['p'],$_GET['o']);
-		include_once(XOOPS_TRUST_PATH.'/modules/'.$dir.'/php/qr_img.php');
+		include_once(XOOPS_ROOT_PATH.'/modules/'.$dir.'/swetake/php/qr_img.php');
 	}
 }
 

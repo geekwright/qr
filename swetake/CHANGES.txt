@@ -1,0 +1,17 @@
+This directory is a copy of QRcode Perl CGI & PHP script ver.0.50i from
+http://www.venus.dti.ne.jp/~swe/program/qr_img0.50i.tar.gz downloaded
+on 12-Mar-2010.
+
+These scripts are Copyright (c)2000-2009, Y.Swetake - All Rights Reserved.
+
+The following changes have been made:
+
+- the containing directory was renamed to 'swetake'.
+- added check of XOOP_ROOT_PATH near head in php/qr_image.php
+- modified $path and $image_path in setting area in php/qr_image.php
+- the perl directory has been removed as it is not used in this context
+- added index.html files to interfere with casual snooping
+
+All conditions as set forth in README-e.txt, and expressly section 
+"5,Notice", remain in full effect.
+

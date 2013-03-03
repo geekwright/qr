@@ -32,10 +32,4 @@ $adminmenu[] = array(
 	'icon'	=> 'images/admin/license.png'
 ) ;
 
-$adminmenu[] = array(
-	'title'	=> _MI_QRMODULE_TROUBLESHOOT ,
-	'link'	=> 'admin/troubleshoot.php' ,
-	'desc'	=> _MI_QRMODULE_TROUBLESHOOT_DESC,
-	'icon'	=> 'images/admin/troubleshoot.png'
-) ;
 ?>

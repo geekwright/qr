@@ -16,7 +16,7 @@ define('_AM_QRMODULE_ADMENU_GOMOD', 'Go To Module');
 define('_AM_QRMODULE_CONFIG_RENDER','QR Code&reg; Render Test');
 define('_AM_QRMODULE_CONFIG_RENDER_PHRASE','Test Phrase:');
 define('_AM_QRMODULE_CONFIG_RENDER_CODE','It Worked!');
-define('_AM_QRMODULE_CONFIG_RENDER_FAIL','Rendering failed! The required script was not found. See help for troubleshooting information.');
+define('_AM_QRMODULE_CONFIG_RENDER_FAIL','Rendering failed! The required script was not found.');
 
 define('_AM_QRMODULE_ADMENU_ABOUT', 'About');
 define('_AM_QRMODULE_ADMENU_HELP', 'Help');

@@ -12,8 +12,8 @@
 
 include 'header.php';
 	$dir = basename( dirname ( dirname( __FILE__ ) ) ) ;
-	$qrpath=XOOPS_TRUST_PATH.'/modules/'.$dir.'/php/';
-	if($xoop25plus) $moduleAdmin->addConfigBoxLine($qrpath, 'folder');
+	//$qrpath=XOOPS_TRUST_PATH.'/modules/'.$dir.'/php/';
+	//if($xoop25plus) $moduleAdmin->addConfigBoxLine($qrpath, 'folder');
 
 	if($xoop25plus) echo $moduleAdmin->addNavigation('index.php') ;
 	else adminmenu(1);
@@ -25,7 +25,7 @@ include 'header.php';
 	$rendercode =sprintf('<form action="" method="get">%s <input type="text" name="test" value="%s" />',_AM_QRMODULE_CONFIG_RENDER_PHRASE,$rendertest);
 	$rendercode.=sprintf('<img src="../getqrcode.php?qrdata=%s" alt="%s"  title="%s" /></form>',$rendertestenc,$rendertest,$rendertest);
 
-	$serverpath = XOOPS_TRUST_PATH.'/modules/'.$dir.'/php/qr_img.php';
+	$serverpath = XOOPS_ROOT_PATH.'/modules/'.$dir.'/swetake/php/qr_img.php';
 	if($xoop25plus) {
 		$moduleAdmin->addInfoBox(_AM_QRMODULE_CONFIG_RENDER);
 
