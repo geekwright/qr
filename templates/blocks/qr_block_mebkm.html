@@ -1,7 +1,7 @@
 <!-- MEBKM:TITLE:(title);URL:(url);; -->
 <{if $block.usepopup}>
 <style>
-div#qrpopup
+div#qrpopupbkm
 {
 	display:none;
 	left:40px;
@@ -12,7 +12,7 @@ div#qrpopup
 	border-width: thin;
 	border-color: #888888;
 	border-radius: 10px;
-	z-index: 9999;
+	z-index: 9m999;
 	box-shadow: 10px 10px 5px #888888;
 }
 img#qrmebkm
@@ -21,21 +21,21 @@ img#qrmebkm
 	margin-top: 2em;
 }
 </style>
-<div id="qrpopup" onclick="hideQRPopUp();" title="<{$block.popupclose}>">
+<div id="qrpopupbkm" onclick="hideQRPopUpBkm();" title="<{$block.popupclose}>">
 <img src="<{$block.imagedir}>/close.png" alt="<{$block.popupclose}>" style="float:right;padding:6px;"><br style="clear:right;" />
 <img id="qrmebkm" src="<{$block.imagedir}>/blank.png" alt="<{$block.alt}>" title="<{$block.alt}>">
 </div>
-<a onclick="showQRPopUp();"><img src="<{$block.imagedir}>/bookmark.png" style="vertical-align:middle;" alt="<{$block.popupprompt}>" title="<{$block.popupprompt}>"> <{$block.popupprompt}></a>
+<a href="#" onclick="showQRPopUpBkm();" <{if $block.mouseover}> onmouseover="showQRPopUpBkm();" onmouseout="hideQRPopUpBkm();" <{/if}>><img src="<{$block.imagedir}>/bookmark.png" style="vertical-align:middle;" alt="<{$block.popupprompt}>" title="<{$block.popupprompt}>"> <{$block.popupprompt}></a>
 <script>
-function showQRPopUp() {
+function showQRPopUpBkm() {
 	var title=encodeURIComponent(document.title);
 	var imgsrc="<{$block.qrscript}>MEBKM:TITLE:"+title+";URL:<{$block.url}>;;";
 	var e = document.getElementById('qrmebkm');
 	e.src=imgsrc;
-	document.getElementById('qrpopup').style.display="block";
+	document.getElementById('qrpopupbkm').style.display="block";
 }
-function hideQRPopUp() {
-	document.getElementById('qrpopup').style.display="none";
+function hideQRPopUpBkm() {
+	document.getElementById('qrpopupbkm').style.display="none";
 }
 </script>
 <{else}>

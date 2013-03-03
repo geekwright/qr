@@ -31,7 +31,9 @@ define('_MB_QR_MECARD_URL'     ,'URL');
 define('_MB_QR_MECARD_NICKNAME','Nickname');
 
 // new in v1.3
-define('_MB_QR_MEBKM_POPUP', 'Show code in popup window?');
-define('_MB_QR_MEBKM_POPUP_PROMPT', 'Prompt for Popup Open');
-define('_MB_QR_MEBKM_POPUP_CLOSE', 'Click to Close');
+define('_MB_QR_SHOW_AS_POPUP', 'Show code in popup window?');
+define('_MB_QR_SHOW_POPUP_ONCLICK','On Click');
+define('_MB_QR_SHOW_POPUP_ONMOUSE','On Mouse Over');
+define('_MB_QR_SHOW_AS_POPUP_PROMPT', 'Prompt for Popup Open');
+define('_MB_QR_SHOW_AS_POPUP_CLOSE', 'Click to Close');
 ?>

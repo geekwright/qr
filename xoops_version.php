@@ -81,7 +81,7 @@ $modversion['blocks'][1] = array(
   'description' => _MI_QR_MANUAL_DESC,
   'show_func' => 'b_qr_manual_show',
   'edit_func' => 'b_qr_manual_edit',
-  'options' => XOOPS_URL.'|Site QR Code',
+  'options' => XOOPS_URL.'|Site QR Code|0|'._MI_QR_POPUP_LAUNCH,
   'template' => 'qr_block.html');
 
 $modversion['blocks'][] = array(
@@ -90,7 +90,7 @@ $modversion['blocks'][] = array(
   'description' => _MI_QR_HERE_DESC,
   'show_func' => 'b_qr_here_show',
   'edit_func' => 'b_qr_here_edit',
-  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|QR Code to access this page|0',
+  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|'._MI_QR_FOR_THIS_PAGE.'|0|0|'._MI_QR_POPUP_LAUNCH,
   'template' => 'qr_block.html');
 
 $modversion['blocks'][] = array(
@@ -99,7 +99,7 @@ $modversion['blocks'][] = array(
   'description' => _MI_QR_MECARD_DESC,
   'show_func' => 'b_qr_mecard_show',
   'edit_func' => 'b_qr_mecard_edit',
-  'options' => '',
+  'options' => '||||||||||'._MI_QR_DEFAULT_MECARD_ALT.'|0|'._MI_QR_POPUP_LAUNCH,
   'template' => 'qr_block.html');
 
 $modversion['blocks'][] = array(
@@ -108,16 +108,16 @@ $modversion['blocks'][] = array(
   'description' => _MI_QR_HEREX_DESC,
   'show_func' => 'b_qr_here_show',
   'edit_func' => 'b_qr_here_edit',
-  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|QR Code to access this page|0',
+  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|'._MI_QR_FOR_THIS_PAGE.'|0|0|'._MI_QR_POPUP_LAUNCH,
   'template' => 'qr_blockx.html');
 
 $modversion['blocks'][] = array(
   'file' => 'blocks.php',
   'name' => _MI_QR_BOOKMARK,
   'description' => _MI_QR_BOOKMARK_DESC,
-  'show_func' => 'b_qr_bookmark_show',
-  'edit_func' => 'b_qr_bookmark_edit',
-  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|QR Code bookmark for this page|0|1|'._MB_QR_MEBKM_LAUNCH,
+  'show_func' => 'b_qr_here_show',
+  'edit_func' => 'b_qr_here_edit',
+  'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|'._MI_QR_FOR_THIS_PAGE.'|0|0|'._MI_QR_POPUP_LAUNCH,
   'template' => 'qr_block_mebkm.html');
 
 // Templates

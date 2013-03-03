@@ -41,10 +41,12 @@ displayed image.</li>
 <li><b>MECARD</b> - coded contact data in docomo MECARD format</li>
 <li><b>This Page QR Code</b> - Displays URL for the current page as a QR code&reg;. The URL includes only the specified page parameters in a 'get' type request.</li>
 <li><b>This Page QR Code Block Extra</b> - as above, but uses a separate template (templates/blocks/qr_blockx_html) for special customizations. </li>
-<li><b>QR Bookmark This Page</b> - Displays a MEBKM format bookmark QR code that includes the page title and url. This also includes an option
-to show the code as a popup, which can help with layout issues, especially with large codes resulting from long titles. </li>
+<li><b>QR Bookmark This Page</b> - Displays a MEBKM format bookmark QR code that includes the page title and url.</li>
 </ul>
 <br />
+All blocks include a popup option, that will show a prompt rather than the QR code. Clicking the prompt reveals the full code. 
+This allows large codes to be incorporated in you site with only a small footprint in the layout. 
+This extra click may reduce the urge to scan and share, but it will also make the technology available
 Here is an example situation for the use of the <b>This Page QR Code Block Extra</b> block. QR codes are often used for sharing, 
 so you might want one near the +1, Like, etc. buttons. You can edit templates/blocks/qr_blockx_html to add the needed html to
 enable the other options, and voil&agrave; - a QR'ed share block.
