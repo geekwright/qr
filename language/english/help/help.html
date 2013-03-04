@@ -46,11 +46,13 @@ displayed image.</li>
 <br />
 All blocks include a popup option, that will show a prompt rather than the QR code. Clicking the prompt reveals the full code. 
 This allows large codes to be incorporated in you site with only a small footprint in the layout. 
-This extra click may reduce the urge to scan and share, but it will also make the technology available
+This extra click may reduce the urge to scan and share, but it will also make the technology available for those who 
+want it, and less intrusive for those who don't. The popup can be configured to trigger on click or mouse ouver.
+<p class="even">
 Here is an example situation for the use of the <b>This Page QR Code Block Extra</b> block. QR codes are often used for sharing, 
 so you might want one near the +1, Like, etc. buttons. You can edit templates/blocks/qr_blockx_html to add the needed html to
 enable the other options, and voil&agrave; - a QR'ed share block.
-
+ 
 <h4 class="odd">Direct Image Generation</h4>
 <p class="even">
 You can also generate a QR code&reg; png image outside of the supplied blocks using these scripts directly:<br />
@@ -99,7 +101,9 @@ To both keep the URL size small and to reduce the confusion which might occur by
 we can make sure that the list contains 'storyid' but not 'start'. Optionally, you can also require that at least one variable from
 your list is in the URL before a code is generated. One use for this is to make sure a code points to an article and not a index list 
 or some other non-content page.
-
+<p class="even">The <b>QR Bookmark This Page</b> block uses a different technique than the others to derive the QR content. 
+The information is take directly from the DOM using javascript. While it can use the variable mechanism described to optionally 
+supress the block display, the url is taken from the window.location instead of generated. 
 <h4 class="odd">Credits</h4>
 <p class="even">
 This module is only possible thanks to Y.Swetake's excellent QRcode Perl CGI & PHP scripts, ver.0.50i. This portion of this package is 

@@ -24,13 +24,13 @@ img#qrimage
 <img src="<{$block.imagedir}>/close.png" alt="<{$block.popupclose}>" style="float:right;padding:6px;"><br style="clear:right;" />
 <img id="qrimage" src="<{$block.imagedir}>/blank.png" alt="<{$block.alt}>" title="<{$block.alt}>">
 </div>
-<a href="#" onclick="showQRPopUp();" <{if $block.mouseover}> onmouseover="showQRPopUp();" onmouseout="hideQRPopUp();" <{/if}>><img src="<{$block.imagedir}>/bookmark.png" style="vertical-align:middle;" alt="<{$block.popupprompt}>" title="<{$block.popupprompt}>"> <{$block.popupprompt}></a>
+<a href="javascript:void(0);" onclick="showQRPopUp();" <{if $block.mouseover}> onmouseover="showQRPopUp();" onmouseout="hideQRPopUp();" <{/if}>><img src="<{$block.imagedir}>/bookmark.png" style="vertical-align:middle;" alt="<{$block.popupprompt}>" title="<{$block.popupprompt}>"> <{$block.popupprompt}></a>
 <script>
 function showQRPopUp() {
 	var title=encodeURIComponent(document.title);
 	var imgsrc="<{$block.qrscript}><{$block.qrdata}>";
 	var e = document.getElementById('qrimage');
-	e.src=imgsrc;
+	if(e.src!=imgsrc) e.src=imgsrc;
 	document.getElementById('qrpopup').style.display="block";
 }
 function hideQRPopUp() {

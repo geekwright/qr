@@ -25,13 +25,15 @@ img#qrmebkm
 <img src="<{$block.imagedir}>/close.png" alt="<{$block.popupclose}>" style="float:right;padding:6px;"><br style="clear:right;" />
 <img id="qrmebkm" src="<{$block.imagedir}>/blank.png" alt="<{$block.alt}>" title="<{$block.alt}>">
 </div>
-<a href="#" onclick="showQRPopUpBkm();" <{if $block.mouseover}> onmouseover="showQRPopUpBkm();" onmouseout="hideQRPopUpBkm();" <{/if}>><img src="<{$block.imagedir}>/bookmark.png" style="vertical-align:middle;" alt="<{$block.popupprompt}>" title="<{$block.popupprompt}>"> <{$block.popupprompt}></a>
+<a href="javascript:void(0);" onclick="showQRPopUpBkm();" <{if $block.mouseover}> onmouseover="showQRPopUpBkm();" onmouseout="hideQRPopUpBkm();" <{/if}>><img src="<{$block.imagedir}>/bookmark.png" style="vertical-align:middle;" alt="<{$block.popupprompt}>" title="<{$block.popupprompt}>"> <{$block.popupprompt}></a>
 <script>
 function showQRPopUpBkm() {
 	var title=encodeURIComponent(document.title);
-	var imgsrc="<{$block.qrscript}>MEBKM:TITLE:"+title+";URL:<{$block.url}>;;";
+	//var url="<{$block.url}>";
+	var url=encodeURIComponent(window.location);
+	var imgsrc="<{$block.qrscript}>MEBKM:TITLE:"+title+";URL:"+url+";;";
 	var e = document.getElementById('qrmebkm');
-	e.src=imgsrc;
+	if(e.src!=imgsrc) e.src=imgsrc;
 	document.getElementById('qrpopupbkm').style.display="block";
 }
 function hideQRPopUpBkm() {
@@ -42,7 +44,9 @@ function hideQRPopUpBkm() {
 <img id="qrmebkm" src="<{$block.imagedir}>/blank.png" alt="<{$block.alt}>" title="<{$block.alt}>">
 <script>
 	var title=encodeURIComponent(document.title);
-	var imgsrc="<{$block.qrscript}>MEBKM:TITLE:"+title+";URL:<{$block.url}>;;";
+	//var url="<{$block.url}>";
+	var url=encodeURIComponent(window.location);
+	var imgsrc="<{$block.qrscript}>MEBKM:TITLE:"+title+";URL:"+url+";;";
 	var e = document.getElementById('qrmebkm');
 	e.src=imgsrc;
 </script>
