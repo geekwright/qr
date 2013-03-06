@@ -1,9 +1,10 @@
 Qr Module ChangeLog
 
 === Qr Module 1.3 ===
-Release date: 03 Mar 2013 (RC)
+Release date: 05 Mar 2013 
 
 * added MEBKM bookmark block
+* add popup option to blocks so code shows on request
 * new language constants bottom of blocks.php, modinfo.php
 * remove trustpath component resulting in streamlined installation
 

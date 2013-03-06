@@ -26,7 +26,7 @@ if (defined("ICMS_ROOT_PATH")) $modversion['image'] = "images/icon_big.png";
 else $modversion['image'] = "images/icon.png";
 
 //about
-$modversion['release_date']     = '2013/02/07';
+$modversion['release_date']     = '2013/03/05';
 $modversion["module_website_url"] = "geekwright.com";
 $modversion["module_website_name"] = "geekwright.com";
 $modversion["module_status"] = "RC";
