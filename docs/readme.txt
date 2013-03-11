@@ -25,7 +25,7 @@ which use the standard mainfile inclusion. This adds a layer of
 additional protections (such as protector) but requires access
 permissions to work as intended.
 
-Five blocks are available.
+Several blocks are available.
 
 Manual QR Code          - Display any string as a QR code
 MECARD                  - Docomo MECARD format QR code
@@ -40,6 +40,7 @@ QR Bookmark This Page   - Display a MEBKM format bookmark QR code
                           that includes the page title and url. 
                           Also includes an option to show the code
                           as a popup.
+vCard                   - Displays vCard format QR Code
 
 Additionally, a qr code image in png format can be generated 
 outside of the supplied blocks by supplying these scripts as

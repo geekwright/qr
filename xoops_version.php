@@ -13,7 +13,7 @@ if (!defined("XOOPS_ROOT_PATH")) die("Root path not defined");
 
 $modversion['name'] = _MI_QR_NAME;
 $modversion['dirname'] = basename( dirname( __FILE__ ) ) ;
-$modversion['version'] = '1.3';
+$modversion['version'] = '1.4';
 $modversion['description'] = _MI_QR_DESC;
 $modversion['author'] = "Richard Griffith (geekwright.com)";
 $modversion['credits'] = "QRcode scripts by Y.Swetake (swetake.com)";
@@ -119,6 +119,16 @@ $modversion['blocks'][] = array(
   'edit_func' => 'b_qr_here_edit',
   'options' => 'page,post_id,itemid,topic_id,forum,storyid,lid|'._MI_QR_FOR_THIS_PAGE.'|0|0|'._MI_QR_POPUP_LAUNCH,
   'template' => 'qr_block_mebkm.html');
+
+$modversion['blocks'][] = array(
+  'file' => 'blocks.php',
+  'name' => _MI_QR_VCARD,
+  'description' => _MI_QR_VCARD_DESC,
+  'show_func' => 'b_qr_vcard_show',
+  'edit_func' => 'b_qr_vcard_edit',
+  'options' => '||||||||||||||||||||||||||||'._MI_QR_DEFAULT_VCARD_ALT.'|0|'._MI_QR_POPUP_LAUNCH,
+  'template' => 'qr_block.html');
+
 
 // Templates
 $modversion['templates'][1]['file'] = 'qr_index.html';

@@ -36,4 +36,43 @@ define('_MB_QR_SHOW_POPUP_ONCLICK','On Click');
 define('_MB_QR_SHOW_POPUP_ONMOUSE','On Mouse Over');
 define('_MB_QR_SHOW_AS_POPUP_PROMPT', 'Prompt for Popup Open');
 define('_MB_QR_SHOW_AS_POPUP_CLOSE', 'Click to Close');
+
+// new in vcard
+define('_MB_QR_VCARD_STRING', 'vCard data fields, leave field blank to omit from bar code. (Full Name and Name required.)');
+define('_MB_QR_VCARD_ALT' , 'ALT String for QR Code Image');
+define('_MB_QR_VCARD_TYPE'         ,'Type');
+define('_MB_QR_VCARD_TYPE_WORK'    ,'Work');
+define('_MB_QR_VCARD_TYPE_HOME'    ,'Home');
+define('_MB_QR_VCARD_TYPE_CELL'    ,'Cell');
+define('_MB_QR_VCARD_TYPE_FAX'     ,'Fax');
+
+define('_MB_QR_VCARD_FN'           ,'Full Name');
+define('_MB_QR_VCARD_N_FAMILY'     ,'Name - Family');
+define('_MB_QR_VCARD_N_GIVEN'      ,'Name - Given Name');
+define('_MB_QR_VCARD_N_ADDITIONAL' ,'Name(s) - Additional');
+define('_MB_QR_VCARD_N_PREFIX'     ,'Name - Prefixes');
+define('_MB_QR_VCARD_N_SUFFIX'     ,'Name - Suffixes');
+define('_MB_QR_VCARD_ORG'          ,'Organization');
+define('_MB_QR_VCARD_TITLE'        ,'Title');
+
+define('_MB_QR_VCARD_ADR_TYPE'     ,'Address - Type');
+define('_MB_QR_VCARD_ADR_POBOX'    ,'Address - PO Box');
+define('_MB_QR_VCARD_ADR_EXTENDED' ,'Address - Extended Address');
+define('_MB_QR_VCARD_ADR_STREET'   ,'Address - Street Address');
+define('_MB_QR_VCARD_ADR_LOCALITY' ,'Address - City');
+define('_MB_QR_VCARD_ADR_REGION'   ,'Address - State/Province');
+define('_MB_QR_VCARD_ADR_POSTCODE' ,'Address - Postal Code');
+define('_MB_QR_VCARD_ADR_COUNTRY'  ,'Address - Country');
+
+define('_MB_QR_VCARD_EMAIL_PREF'   ,'Email - Prefered');
+define('_MB_QR_VCARD_EMAIL'        ,'Email');
+
+define('_MB_QR_VCARD_TEL_TYPE'     ,'Type');
+define('_MB_QR_VCARD_TEL_PREF'     ,'Phone - Prefered');
+define('_MB_QR_VCARD_TEL'          ,'Phone');
+define('_MB_QR_VCARD_URL'          ,'URL');
+define('_MB_QR_VCARD_NOTE'         ,'Note');
+
+define('_MB_QR_VCARD_RAW'         ,'Raw vCard Line Data');
+
 ?>

@@ -183,4 +183,136 @@ function b_qr_mecard_edit($options) {
 	return $form;
 }
 
+// vCard : lower device compatibility than MECARD, but requested
+
+function b_qr_vcard_show($options) {
+	for($i=0;$i<28;$i++) {
+		$options[$i]=mb_decode_numericentity($options[$i], array(0x0, 0x2FFFF, 0, 0xFFFF), 'UTF-8');
+	}
+	$crlf="\r\n";
+	$vcard ="BEGIN:VCARDVERSION:3.0REV:".date('c').$crlf;
+	$vcard.="FN:{$options[0]}".$crlf;
+	$vcard.="N:{$options[1]};{$options[2]};{$options[3]};{$options[4]};{$options[5]}".$crlf;
+	if(!empty($options[6])) $vcard.="ORG:{$options[6]}".$crlf;
+	if(!empty($options[7])) $vcard.="TITLE:{$options[7]}".$crlf;
+	if(!empty($options[9]) || !empty($options[10]) || !empty($options[11]) || !empty($options[12]) ||
+		!empty($options[13]) || !empty($options[14]) || !empty($options[15])) {
+			$vcard.="ADR;TYPE={$options[8]}:{$options[9]};{$options[10]};{$options[11]};";
+			$vcard.="{$options[12]};{$options[13]};{$options[14]};{$options[15]}".$crlf;
+	}
+	if(!empty($options[16])) $vcard.="EMAIL;TYPE=INTERNET,PREF:{$options[16]}".$crlf;
+	if(!empty($options[17])) $vcard.="EMAIL;TYPE=INTERNET:{$options[17]}".$crlf;
+	if(!empty($options[18])) $vcard.="TEL;TYPE={$options[19]},PREF:{$options[18]}".$crlf;
+	if(!empty($options[20])) $vcard.="TEL;TYPE={$options[21]}:{$options[20]}".$crlf;
+	if(!empty($options[22])) $vcard.="TEL;TYPE={$options[23]}:{$options[22]}".$crlf;
+	if(!empty($options[24])) $vcard.="URL:{$options[24]}".$crlf;
+	if(!empty($options[25])) $vcard.="NOTE:{$options[25]}".$crlf;
+	if(!empty($options[26])) $vcard.="{$options[26]}".$crlf;
+	if(!empty($options[27])) $vcard.="{$options[27]}".$crlf;
+	$vcard.="TZ:".date('O').$crlf;
+	$vcard.="END:VCARD".$crlf;
+
+	$dir = basename( dirname ( dirname( __FILE__ ) ) ) ;
+
+	$block['qrcode']='<img src="'.XOOPS_URL.'/modules/'.$dir.'/getqrcode.php?qrdata='.urlencode($vcard).'" alt="'.$options[28].'" title="'.$options[28].'">';
+	$block['qrdata']=urlencode($vcard);
+    $block['qrscript']= XOOPS_URL.'/modules/'.$dir.'/getqrcode.php?qrdata=';
+//    $block['url']=$oururl;
+    $block['alt']=$options[28];
+    $block['imagedir']= XOOPS_URL.'/modules/'.$dir.'/images';
+    $block['usepopup']= $options[29]?true:false;
+    $block['mouseover']= $options[29]>1;
+	$block['popupprompt']= $options[30];
+    $block['popupclose']=_MB_QR_SHOW_AS_POPUP_CLOSE;
+    trigger_error(print_r($block,1));
+
+	return $block;
+}
+
+function b_qr_formatvcard($tag,$value) {
+	$carditem='';
+	$value=mb_decode_numericentity($value, array(0x0, 0x2FFFF, 0, 0xFFFF), 'UTF-8');
+	// escape according to docomo docs
+	$value=str_replace("\\","\\\\",$value);
+	$value=str_replace(":","\\:",$value);
+	$value=str_replace(";","\\;",$value);
+	if($tag=='N' || $tag=='ADR' || $tag=='KANA') $value=str_replace(",","\\,",$value);
+	if(!empty($value)) $carditem=$tag.':'.$value.';';
+	return $carditem;
+}
+
+function b_qr_vcard_add($prompt,$op,$value,$br=true,$type='')
+{
+	$form=$prompt;
+	$l=$br?'<br />':'';
+	switch(strtoupper($type)) {
+		case 'ADR':
+			$form .= ": <select id='options[{$op}]' name='options[{$op}]'>";
+			$form .= '<option value="WORK"'.($value=="WORK"?' selected':'').'>'._MB_QR_VCARD_TYPE_WORK.'</option>';
+			$form .= '<option value="HOME"'.($value=="HOME"?' selected':'').'>'._MB_QR_VCARD_TYPE_HOME.'</option>';
+			$form .= '</select>';
+			break;
+		case 'TEL':
+			$form .= ": <select id='options[{$op}]' name='options[{$op}]'>";
+			$form .= '<option value="CELL,VOICE"'.($value=="CELL,VOICE"?' selected':'').'>'._MB_QR_VCARD_TYPE_CELL.'</option>';
+			$form .= '<option value="WORK,VOICE"'.($value=="WORK,VOICE"?' selected':'').'>'._MB_QR_VCARD_TYPE_WORK.'</option>';
+			$form .= '<option value="HOME,VOICE"'.($value=="HOME,VOICE"?' selected':'').'>'._MB_QR_VCARD_TYPE_HOME.'</option>';
+			$form .= '<option value="FAX"'.($value=="FAX"?' selected':'').'>'._MB_QR_VCARD_TYPE_FAX.'</option>';
+			$form .= '</select>';
+			break;
+		default:
+		case '':
+			$form .= ": <input type='text' value='{$value}' id='options[{$op}]' name='options[{$op}]' />";
+			break;
+	}
+	return $form.$l;
+}
+
+function b_qr_vcard_edit($options) {
+	$form = _MB_QR_VCARD_STRING."<br />";
+
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_FN,'0',$options[0]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_N_FAMILY,'1',$options[1]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_N_GIVEN,'2',$options[2]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_N_ADDITIONAL,'3',$options[3]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_N_PREFIX,'4',$options[4]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_N_SUFFIX,'5',$options[5]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ORG,'6',$options[6]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_TITLE,'7',$options[7]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ADR_TYPE,'8',$options[8],1,'ADR');
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ADR_POBOX,'9',$options[9]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ADR_EXTENDED,'10',$options[10]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ADR_STREET,'11',$options[11]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ADR_LOCALITY,'12',$options[12]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ADR_REGION,'13',$options[13]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ADR_POSTCODE,'14',$options[14]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_ADR_COUNTRY,'15',$options[15]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_EMAIL_PREF,'16',$options[16]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_EMAIL,'17',$options[17]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_TEL_PREF,'18',$options[18],0);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_TEL_TYPE,'19',$options[19],1,'TEL');
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_TEL,'20',$options[20],0);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_TEL_TYPE,'21',$options[21],1,'TEL');
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_TEL,'22',$options[22],0);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_TEL_TYPE,'23',$options[23],1,'TEL');
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_URL,'24',$options[24]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_NOTE,'25',$options[25]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_RAW,'26',$options[26]);
+	$form .= b_qr_vcard_add(_MB_QR_VCARD_RAW,'27',$options[27]);
+
+	$form .= _MB_QR_VCARD_ALT.": <input type='text' value='".$options[28]."'id='options[28]' name='options[28]' /><br /><br />";
+	
+	$form .= _MB_QR_SHOW_AS_POPUP.": <input type='radio' name='options[29]' value='1' ";
+	if($options[29]==1) $form .="checked='checked'"; 
+	$form .= " />&nbsp;"._MB_QR_SHOW_POPUP_ONCLICK."&nbsp;<input type='radio' name='options[29]' value='2' ";
+	if($options[29]==2) $form .="checked='checked'"; 
+	$form .= " />&nbsp;"._MB_QR_SHOW_POPUP_ONMOUSE."&nbsp;<input type='radio' name='options[29]' value='0' ";
+	if(!$options[29]) $form .="checked='checked'"; 
+	$form .= "  />&nbsp;"._NO."<br /><br />";
+
+	$form .= _MB_QR_SHOW_AS_POPUP_PROMPT.": <input type='text' size='20' value='".$options[30]."'id='options[30]' name='options[30]' /><br /><br />";
+
+	return $form;
+}
+
 ?>

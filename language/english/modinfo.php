@@ -57,5 +57,11 @@ define('_MI_QR_BOOKMARK_DESC', 'Display Bookmark QR Code for Current Page.');
 define('_MI_QR_POPUP_LAUNCH', 'Click for QR Code&reg;');
 define('_MI_QR_FOR_THIS_PAGE', 'QR Code to access this page');
 define('_MI_QR_DEFAULT_MECARD_ALT', 'Contact Information');
+
+// new in vcard
+define('_MI_QR_VCARD', 'vCard');
+define('_MI_QR_VCARD_DESC', 'vCard format QR Code');
+define('_MI_QR_DEFAULT_VCARD_ALT', 'Contact Information');
+
 }
 ?>
