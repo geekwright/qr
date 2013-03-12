@@ -224,7 +224,6 @@ function b_qr_vcard_show($options) {
     $block['mouseover']= $options[29]>1;
 	$block['popupprompt']= $options[30];
     $block['popupclose']=_MB_QR_SHOW_AS_POPUP_CLOSE;
-    trigger_error(print_r($block,1));
 
 	return $block;
 }
