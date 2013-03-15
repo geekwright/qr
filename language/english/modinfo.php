@@ -22,7 +22,7 @@ define('_MI_QR_LIMIT_REFERER', 'Limit by Referer');
 define('_MI_QR_LIMIT_REFERER_DSC', 'Restrict QR Code generation to requests from this site?');
 
 define('_MI_QR_EC_LEVEL', 'Error Correction Level');
-define('_MI_QR_EC_LEVEL_DSC', 'This controls the amount of error correction included in generated QR Codes. The hisher the level, the larger the code. The default is Level M.');
+define('_MI_QR_EC_LEVEL_DSC', 'This controls the amount of error correction included in generated QR Codes. The higher the level, the larger the code. The default is Level M.');
 
 define('_MI_QR_ECL_L', 'Level L – up to 7% damage');
 define('_MI_QR_ECL_M', 'Level M – up to 15% damage');
