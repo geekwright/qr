@@ -15,7 +15,7 @@ include 'header.php';
 if($xoop25plus) echo $moduleAdmin->addNavigation('license.php');
 else adminmenu(3);
 
-$qr='QRcode Perl CGI & PHP script ver.0.50i';
+$qr='QRcode PHP script ver.0.50i';
 $line = '<p><b>This license covers the scripts in the "modules/qr/swetake" directory of this module distribution:</b><br /><br />';
 $line .= '<pre>'.utf8_encode(implode("\n", file('../docs/swetake-license.txt'))) . "\n</pre>";
 if($xoop25plus) {
