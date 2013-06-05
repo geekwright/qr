@@ -1,15 +1,15 @@
-Qr Module Version 1.3 for XOOPS and ImpressCMS
+Qr Module for XOOPS and ImpressCMS
 
 Overview
 ========
 This module adds QR Code(R) generating capabilities to a XOOPS
-or ImpressCMS site. Codes can be added to your site through 
+or ImpressCMS site. Codes can be added to your site through
 blocks or by direct script calls.
 
 Installation
 ============
 The distribution archive can be expanded directly into the main
-directory of your XOOPS or ImpressCMS site. Then, install the qr 
+directory of your XOOPS or ImpressCMS site. Then, install the qr
 module from the system administration area of your CMS.
 
 Usage
@@ -19,7 +19,7 @@ hide it from view. The main and only page is blank unless you
 add blocks to it.
 
 Group access permissions to the qr module are required to
-display QR codes, above and beyond the block display permission. 
+display QR codes, above and beyond the block display permission.
 QR generation starts from a scripts in the qr module directory
 which use the standard mainfile inclusion. This adds a layer of
 additional protections (such as protector) but requires access
@@ -30,18 +30,18 @@ Five blocks are available.
 Manual QR Code          - Display any string as a QR code
 MECARD                  - Docomo MECARD format QR code
 This Page QR Code       - Displays URL for the page in QR code.
-                          The URL includes only the specified 
+                          The URL includes only the specified
                           variables in a 'get' type request.
-This Page QR Code Extra - Same as 'This Page QR Code' but uses 
-                          the blocks/qr_blockx.html template, 
-                          for use in installations needing 
+This Page QR Code Extra - Same as 'This Page QR Code' but uses
+                          the blocks/qr_blockx.html template,
+                          for use in installations needing
                           multiple customizations.
 QR Bookmark This Page   - Display a MEBKM format bookmark QR code
-                          that includes the page title and url. 
+                          that includes the page title and url.
                           Also includes an option to show the code
                           as a popup.
 
-Additionally, a qr code image in png format can be generated 
+Additionally, a qr code image in png format can be generated
 outside of the supplied blocks by supplying these scripts as
 the SRC URL in an HTML IMG tag:
 
@@ -69,23 +69,23 @@ upper or all lower case (not mixed):
   URL      (web site URL)
   NICKNAME (nickname)
 
-The N (name) is generally required by code scanners, and thus is 
-required to generate a code. All other variables are optional, and 
+The N (name) is generally required by code scanners, and thus is
+required to generate a code. All other variables are optional, and
 will be used only if specified.
 
 Notes
 =====
-This module is released under the GNU General Public License, 
+This module is released under the GNU General Public License,
 Version 2, with the exception of the 'swetake' folder. This
 folder contains Y.Swetake's excellent QRcode PHP script ver.0.50i,
-and is covered under a separate free software license documented 
+and is covered under a separate free software license documented
 in both the docs and swetake folders.
 
 More information on the QRcode library scripts see:
 http://www.swetake.com/qr/index-e.html
 
 This module has been tested in ImpressCMS versions 1.2.7 and 1.3.4,
-and in Xoops version 2.5.5.
+and in Xoops version 2.5.6.
 
 This module was developed by Geekwright, LLC. Report any bugs
 or issues to richard@geekwright.com
