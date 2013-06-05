@@ -13,7 +13,7 @@ if (!defined("XOOPS_ROOT_PATH")) die("Root path not defined");
 
 $modversion['name'] = _MI_QR_NAME;
 $modversion['dirname'] = basename( dirname( __FILE__ ) ) ;
-$modversion['version'] = '1.3';
+$modversion['version'] = '1.4';
 $modversion['description'] = _MI_QR_DESC;
 $modversion['author'] = "Richard Griffith (geekwright.com)";
 $modversion['credits'] = "QRcode scripts by Y.Swetake (swetake.com)";
@@ -26,10 +26,10 @@ if (defined("ICMS_ROOT_PATH")) $modversion['image'] = "images/icon_big.png";
 else $modversion['image'] = "images/icon.png";
 
 //about
-$modversion['release_date']     = '2013/03/05';
+$modversion['release_date']     = '2013/06/05';
 $modversion["module_website_url"] = "geekwright.com";
 $modversion["module_website_name"] = "geekwright.com";
-$modversion["module_status"] = "RC";
+$modversion["module_status"] = "Final";
 $modversion['min_php']='5.2';
 $modversion['min_xoops']='2.5';
 $modversion['system_menu'] = 1;

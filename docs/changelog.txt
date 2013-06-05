@@ -1,7 +1,12 @@
 Qr Module ChangeLog
 
+=== Qr Module 1.4 ===
+Release date: 05 Jun 2013
+
+* minor fixes
+
 === Qr Module 1.3 ===
-Release date: 05 Mar 2013 
+Release date: 05 Mar 2013
 
 * added MEBKM bookmark block
 * add popup option to blocks so code shows on request
@@ -11,13 +16,13 @@ Release date: 05 Mar 2013
 === Qr Module 1.2 ===
 Release date: 7 Feb 2013
 
-* attempt automated installation to trust path 
-* add getmecard.php script to generate MECARD image from components 
+* attempt automated installation to trust path
+* add getmecard.php script to generate MECARD image from components
 * add uidmecard.php script to generate MECARD image for a XOOPS user id
 * add option to here block to control variable required
 * new 'Extra' block template for easier customizations
 * new preference option for error correction level
-* add new XOOPS ModuleAdmin in administration 
+* add new XOOPS ModuleAdmin in administration
 * qr directory can be renamed if desired
 * added compatability script for Designburo.nl qrcode module API
 
