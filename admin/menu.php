@@ -10,6 +10,31 @@
  * @version	$Id$
  *
  **/
+if(file_exists(XOOPS_ROOT_PATH.'/Frameworks/moduleclasses/icons/32/about.png')) {
+$pathIcon32='../../Frameworks/moduleclasses/icons/32';
+
+$adminmenu[1] = array(
+	'title'	=> _MI_QRMODULE_HOME ,
+	'link'	=> 'admin/index.php' ,
+	'desc'	=> _MI_QRMODULE_HOME_DESC,
+	'icon'	=> $pathIcon32.'/home.png'
+) ;
+
+$adminmenu[] = array(
+	'title'	=> _MI_QRMODULE_ABOUT ,
+	'link'	=> 'admin/about.php' ,
+	'desc'	=> _MI_QRMODULE_ABOUT_DESC,
+	'icon'	=> $pathIcon32.'/about.png'
+) ;
+
+$adminmenu[] = array(
+	'title'	=> _MI_QRMODULE_LICENSE ,
+	'link'	=> 'admin/license.php' ,
+	'desc'	=> _MI_QRMODULE_LICENSE_DESC,
+	'icon'	=> $pathIcon32.'/view_text.png'
+) ;
+
+} else {
 
 $adminmenu[1] = array(
 	'title'	=> _MI_QRMODULE_HOME ,
@@ -32,4 +57,5 @@ $adminmenu[] = array(
 	'icon'	=> 'images/admin/license.png'
 ) ;
 
+}
 ?>
