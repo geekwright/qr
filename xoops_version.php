@@ -13,7 +13,7 @@ if (!defined("XOOPS_ROOT_PATH")) die("Root path not defined");
 
 $modversion['name'] = _MI_QR_NAME;
 $modversion['dirname'] = basename( dirname( __FILE__ ) ) ;
-$modversion['version'] = '1.4';
+$modversion['version'] = '1.4.1';
 $modversion['description'] = _MI_QR_DESC;
 $modversion['author'] = "Richard Griffith (geekwright.com)";
 $modversion['credits'] = "QRcode scripts by Y.Swetake (swetake.com)";
