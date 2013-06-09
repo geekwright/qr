@@ -24,7 +24,9 @@ img#qrimage
 <img src="<{$block.imagedir}>/close.png" alt="<{$block.popupclose}>" style="float:right;padding:6px;"><br style="clear:right;" />
 <img id="qrimage" src="<{$block.imagedir}>/blank.png" alt="<{$block.alt}>" title="<{$block.alt}>">
 </div>
+<div class="qrpopup_link">
 <a href="javascript:void(0);" onclick="showQRPopUp();" <{if $block.mouseover}> onmouseover="showQRPopUp();" onmouseout="hideQRPopUp();" <{/if}>><img src="<{$block.imagedir}>/bookmark.png" style="vertical-align:middle;" alt="<{$block.popupprompt}>" title="<{$block.popupprompt}>"> <{$block.popupprompt}></a>
+</div>
 <script>
 function showQRPopUp() {
 	var title=encodeURIComponent(document.title);
@@ -38,5 +40,7 @@ function hideQRPopUp() {
 }
 </script>
 <{else}>
+<div class="qrimage">
 <{$block.qrcode}>
+</div>
 <{/if}>
